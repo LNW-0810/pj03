@@ -325,24 +325,6 @@ for chat in st.session_state["chat_history"]:
         st.markdown(chat["content"])
 
 # --------------------------------------------------
-# 퀵 리플라이 버튼 (대화 없을 때만 표시)
-# --------------------------------------------------
-if not st.session_state["chat_history"]:
-    st.markdown('<div class="rocket-divider"><span>— 빠른 시작 —</span></div>', unsafe_allow_html=True)
-    col1, col2, col3, col4 = st.columns(4)
-    quick_map = {
-        col1: ("👋 안녕, 나옹!", "안녕, 나옹!"),
-        col2: ("🚀 로켓단 소개", "로켓단에 대해 알려줘"),
-        col3: ("⚡ 피카츄 어디?", "피카츄는 어디 있어?"),
-        col4: ("🪙 금구슬 자랑", "금구슬에 대해 얘기해줘"),
-    }
-    for col, (label, msg) in quick_map.items():
-        with col:
-            if st.button(label, key=f"quick_{label}"):
-                st.session_state["quick_input"] = msg
-                st.rerun()
-
-# --------------------------------------------------
 # 퀵 리플라이 처리
 # --------------------------------------------------
 if st.session_state["quick_input"]:
