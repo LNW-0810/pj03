@@ -6,6 +6,11 @@ pages = [
         title="Chatbot API",
         icon="😊",
         default=True
+    ),
+    st.Page(
+        page="pages/stt_chatbot.py",
+        title="STT test",
+        icon="😊"
     )
 ]
 

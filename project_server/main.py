@@ -168,3 +168,12 @@ async def clear_session(session_id: str):
     if session_id in conversation_histories:
         del conversation_histories[session_id]
     return {"message": f"세션 {session_id}을 초기화했다옹."}
+
+# ---------------------------------------------------
+# 음성 입력시 텍스트 출력해서 정리해주는 챗봇 만들기
+# ---------------------------------------------------
+
+def save_voice(file: UploadFile = File(...)):
+    
+
+@app.post
